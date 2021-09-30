@@ -34,7 +34,7 @@ namespace Test
                 }
                 else
                 {
-                    Console.WriteLine(num[i] + " is even, it's nearest Prime number is " + nearestPrime(num[i]));
+                    Console.WriteLine(num[i] + " is odd, it's nearest Prime number is " + nearestPrime(num[i]));
                 }
             }
         }
