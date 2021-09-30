@@ -1,3 +1,10 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace Test
 {
     class Program
@@ -5,8 +12,7 @@ namespace Test
         public static void Main(string[] args)
         {
             int[] num = new int[5];
-            
-            for (int i = 0; i<5; i++)
+            for (int i = 0; i < 5; i++)
             {
                 try
                 {
@@ -56,35 +62,22 @@ namespace Test
         }
         public static int nearestPrime(int n)
         {
-            int d1 = 0, d2 = 0, n1 = 0, n2 = 0;
-            for (int i = n; ; i--)
+            int n1 = 0;
+            for (int i = n; ; i++) // nearest prime num to the left
             {
                 if (nPrime(i))
                 {
-                    d1 = n - i;
-                    n2 = i;
-                    break;
-                }
-            }
-            for (int i = n; ; i++)
-            {
-                if (nPrime(i))
-                {
-                    d1 = i - n;
                     n1 = i;
-                    break;
+                    if (n == n1)
+                    {
+                        i++;
+                    }
+                    else { 
+                        break;
+                    }
                 }
             }
-
-
-            if (d1 <= d2)
-            {
-                return n1;
-            }
-            else
-            {
-                return n2;
-            }
+            return n1;
         }
     }
 }
